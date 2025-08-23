@@ -1,1 +1,1 @@
-setProperty("WaterAppHeader", "color", "red");
+setProperty("WaterAppHeader", "color", "Blue");
