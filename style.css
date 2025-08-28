@@ -6,3 +6,13 @@ body {
     color: white;       
     border: none;
 }
+
+p {
+    color:  #38618C;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+.img-bottle {
+    width: 200px;
+    height: auto;
+}
