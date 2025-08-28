@@ -1,7 +1,7 @@
 setProperty("WaterAppHeader", "color", "#38618C");
 setProperty("ParaText", "color", "#38618C");
 setProperty("WaterAppHeader", "font-size", "36px");
-setProperty("ParaText", "font-size", "20px");
+setProperty("ParaText", "font-size", "24px");
 setProperty("SpanishButton", "background-color", "#38618C");
 setProperty("EnglishButton", "background-color", "#38618C");
 

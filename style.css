@@ -1,18 +1,3 @@
 body {
     background-color: #D4EAC8;
 }
-p {
-    font-size: 20px;
-    font-family: Arial, sans-serif;  
-    font-weight: bold;  
-    color: #38618C;
-} 
-
-.btn-md { 
-    padding: 15px 25px;
-    font-size: 18px;
-}
-
-.btn {
-    margin: 10px 0;
-}
