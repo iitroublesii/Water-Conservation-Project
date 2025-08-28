@@ -1,3 +1,8 @@
 body {
     background-color: #D4EAC8;
 }
+.btn-custom {
+    background-color: #38618C;
+    color: white;       
+    border: none;
+}
