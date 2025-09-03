@@ -12,6 +12,10 @@ p {
     font-size: 24px;
 }
 .img-bottle {
-    width: 150px;
+    width: 50px;
+    height: auto;
+}
+.drip-img {
+    width: 40px;
     height: auto;
 }
