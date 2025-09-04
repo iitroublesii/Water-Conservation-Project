@@ -7,7 +7,7 @@ body {
 
 p {
   color: #38618C;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .btn-custom {
@@ -43,7 +43,7 @@ p {
 .faucet-img {
   position: absolute;
   top: 200px;
-  left: 20%;
+  left: 32%;
   transform: translateX(-50%);
   width: 250px;
   z-index: 0;

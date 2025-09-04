@@ -1,7 +1,7 @@
 setProperty("WaterAppHeader", "color", "#38618C");
 setProperty("ParaText", "color", "#38618C");
-setProperty("WaterAppHeader", "font-size", "36px");
-setProperty("ParaText", "font-size", "30px");
+setProperty("WaterAppHeader", "font-size", "30px");
+setProperty("ParaText", "font-size", "24px");
 setProperty("SpanishButton", "background-color", "#38618C");
 setProperty("EnglishButton", "background-color", "#38618C");
 
@@ -65,7 +65,7 @@ onEvent("faucet", "click", () => {
   const containerRect = faucet.parentElement.getBoundingClientRect();
   const faucetRect = faucet.getBoundingClientRect();
 
-  const dripLeft = faucetRect.left + faucetRect.width * 0.75 - drip.offsetWidth / 2 - containerRect.left;
+  const dripLeft = faucetRect.left + faucetRect.width * 0.50 - drip.offsetWidth / 2 - containerRect.left;
   const dripTop = faucetRect.bottom - containerRect.top -120;
 
   setProperty("drip", "left", dripLeft + "px");
