@@ -32,7 +32,7 @@ onEvent("glassBottle", "click", () => {
   const containerRect = faucet.parentElement.getBoundingClientRect();
   const faucetRect = faucet.getBoundingClientRect();
 
-  const targetLeft = faucetRect.left + faucetRect.width * 0.75 - glass.offsetWidth / 2 - containerRect.left;
+  const targetLeft = faucetRect.left + faucetRect.width * .85 - glass.offsetWidth / 2 - containerRect.left;
   const targetTop = faucetRect.bottom - containerRect.top - 130;
 
   setProperty("glassBottle", "position", "absolute");
@@ -65,8 +65,8 @@ onEvent("faucet", "click", () => {
   const containerRect = faucet.parentElement.getBoundingClientRect();
   const faucetRect = faucet.getBoundingClientRect();
 
-  const dripLeft = faucetRect.left + faucetRect.width * 0.50 - drip.offsetWidth / 2 - containerRect.left;
-  const dripTop = faucetRect.bottom - containerRect.top -120;
+  const dripLeft = faucetRect.left + faucetRect.width * .80 - drip.offsetWidth / .75 - containerRect.left;
+  const dripTop = faucetRect.bottom - containerRect.top -130;
 
   setProperty("drip", "left", dripLeft + "px");
   setProperty("drip", "top", dripTop + "px");
