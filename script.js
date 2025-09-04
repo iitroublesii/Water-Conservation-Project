@@ -18,25 +18,67 @@ onEvent("EnglishButton", "click", function () {
   setText("EnglishButton", "English");
 });
 
-var correctBottle = false;
+let correctBottle = false;
 
 hideElement("plasticNo");
 hideElement("drip");
 
-onEvent("glassBottle", "click", function () {
+onEvent("glassBottle", "click", () => {
   hideElement("plasticNo");
   correctBottle = true;
+
+  const faucet = document.getElementById("faucet");
+  const glass = document.getElementById("glassBottle");
+  const containerRect = faucet.parentElement.getBoundingClientRect();
+  const faucetRect = faucet.getBoundingClientRect();
+
+  const targetLeft = faucetRect.left + faucetRect.width * 0.75 - glass.offsetWidth / 2 - containerRect.left;
+  const targetTop = faucetRect.bottom - containerRect.top - 130;
+
+  setProperty("glassBottle", "position", "absolute");
+  setProperty("glassBottle", "transition", "all 0.6s ease");
+  setProperty("glassBottle", "left", targetLeft + "px");
+  setProperty("glassBottle", "top", targetTop + "px");
 });
 
-onEvent("plasticBottle", "click", function () {
-  showElement("plasticNo");
+onEvent("plasticBottle", "click", () => {
   correctBottle = false;
+
+  const plastic = document.getElementById("plasticBottle");
+  const plasticNo = document.getElementById("plasticNo");
+
+  plasticNo.style.left = plastic.offsetLeft + "px";
+  plasticNo.style.top = plastic.offsetTop + "px";
+
+  showElement("plasticNo");
 });
 
-onEvent("faucet", "click", function () {
-  if (correctBottle) {
-    showElement("drip");
-  } else {
+onEvent("faucet", "click", () => {
+  const drip = document.getElementById("drip");
+
+  if (!correctBottle) {
     hideElement("drip");
+    return;
   }
+
+  const faucet = document.getElementById("faucet");
+  const containerRect = faucet.parentElement.getBoundingClientRect();
+  const faucetRect = faucet.getBoundingClientRect();
+
+  const dripLeft = faucetRect.left + faucetRect.width * 0.75 - drip.offsetWidth / 2 - containerRect.left;
+  const dripTop = faucetRect.bottom - containerRect.top -120;
+
+  setProperty("drip", "left", dripLeft + "px");
+  setProperty("drip", "top", dripTop + "px");
+
+  drip.classList.remove("drip-animate");
+  void drip.offsetWidth; 
+  drip.classList.add("drip-animate");
+
+  showElement("drip");
+  setTimeout(() => hideElement("drip"), 1000);
+});
+
+onEvent("NextButton", "click", () => {
+  window.location.href = "index2.html";
 });

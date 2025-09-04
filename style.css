@@ -1,22 +1,75 @@
 body {
-    background-color: #D4EAC8;
-}
-.btn-custom {
-    background-color: #38618C;
-    color: white;       
-    border: none;
+  background-color: #D4EAC8;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
 }
 
 p {
-    color:  #38618C;
-    font-size: 24px;
-    text-align: center;
+  color: #38618C;
+  font-size: 24px;
 }
-.img-bottle {
-    width: 50px;
-    height: auto;
+
+.btn-custom {
+  background-color: #38618C;
+  color: white;
+  border: none;
 }
+
+.bottle-area {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  margin: 40px auto 0 auto;
+}
+
+.bottle-row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 100px;
+}
+
+.bottle-img {
+  width: 70px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.faucet-img {
+  position: absolute;
+  top: 200px;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 250px;
+  z-index: 0;
+}
+
+.plastic-no {
+  position: absolute;
+  width: 70px;
+  height: auto;
+  pointer-events: none;
+  display: none;
+  z-index: 3;
+}
+
 .drip-img {
-    width: 40px;
-    height: auto;
+  position: absolute;
+  width: 20px;
+  display: none;
+  z-index: 0;
+}
+
+@keyframes dripAnimation {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(80px); }
+}
+
+.drip-animate {
+  animation: dripAnimation 2s ease-in-out forwards;
 }
