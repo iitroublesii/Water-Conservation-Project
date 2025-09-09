@@ -82,3 +82,24 @@ onEvent("faucet", "click", () => {
 onEvent("NextButton", "click", () => {
   window.location.href = "index2.html";
 });
+
+onEvent("showerDuck", "click", () => {
+  const showerDuck = document.getElementById("showerDuck");
+  const rubberDuck = document.getElementById("rubberDuck");
+
+
+  rubberDuck.style.left = showerDuck.offsetLeft + "px";
+  rubberDuck.style.top = showerDuck.offsetTop + "px";
+
+  showElement("rubberDuck");
+});
+
+onEvent("startTimer", "click", () => {
+  const trigger = document.getElementById("startTimer");
+  const timer = document.getElementById("timer");
+
+  timer.style.left = trigger.offsetLeft + "px";
+  timer.style.top = trigger.offsetTop + "px";
+
+  showElement("timer");
+});
