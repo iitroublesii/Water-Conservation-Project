@@ -7,7 +7,7 @@ body {
 
 p {
   color: #38618C;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .btn-custom {
@@ -66,10 +66,46 @@ p {
 }
 
 @keyframes dripAnimation {
-  0% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(80px); }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
 }
 
 .drip-animate {
   animation: dripAnimation 1s ease-in-out forwards;
 }
+
+#rubberDuck {
+  width: 130px;
+  height: auto;
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  z-index: 3;
+}
+
+#showerDuck {
+  width: 300px;
+  height: auto;
+}
+
+#timer {
+  width: 90px;
+  height: auto;
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  z-index: 3;
+}
+
+#startTimer {
+  width: 90px;
+  height: auto;
+}
+

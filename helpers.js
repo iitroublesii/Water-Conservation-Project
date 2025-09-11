@@ -163,3 +163,8 @@ function showElement(id) {
 function hideElement(id) {
   setProperty(id, "display", "none");
 }
+
+function showElement(id) {
+    document.getElementById(id).style.display = "block";
+}
+

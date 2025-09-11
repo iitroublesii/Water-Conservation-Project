@@ -84,22 +84,44 @@ onEvent("NextButton", "click", () => {
 });
 
 onEvent("showerDuck", "click", () => {
-  const showerDuck = document.getElementById("showerDuck");
   const rubberDuck = document.getElementById("rubberDuck");
+  const showerDuck = document.getElementById("showerDuck");
 
+  const showerRect = showerDuck.getBoundingClientRect();
 
-  rubberDuck.style.left = showerDuck.offsetLeft + "px";
-  rubberDuck.style.top = showerDuck.offsetTop + "px";
+  if (rubberDuck.style.display === "block") {
+    hideElement("rubberDuck");
+  } else {
+    showElement("rubberDuck");
 
-  showElement("rubberDuck");
+    requestAnimationFrame(() => {
+      const duckWidth = rubberDuck.offsetWidth;
+      const duckHeight = rubberDuck.offsetHeight;
+
+      const left = showerRect.left + window.scrollX + (showerRect.width / 2) - (duckWidth / 2);
+      const top = showerRect.top + window.scrollY + (showerRect.height / 2) - (duckHeight / 2);
+
+      rubberDuck.style.left = `${left}px`;
+      rubberDuck.style.top = `${top}px`;
+    });
+  }
 });
 
 onEvent("startTimer", "click", () => {
-  const trigger = document.getElementById("startTimer");
   const timer = document.getElementById("timer");
+  const trigger = document.getElementById("startTimer");
+  const triggerRect = trigger.getBoundingClientRect();
 
-  timer.style.left = trigger.offsetLeft + "px";
-  timer.style.top = trigger.offsetTop + "px";
+  if (timer.style.display === "block") {
+    hideElement("timer");
+  } else {
+    const left = triggerRect.left + window.scrollX;
+    const top = triggerRect.top + window.scrollY;
 
-  showElement("timer");
+    timer.style.left = `${left}px`;
+    timer.style.top = `${top}px`;
+
+    showElement("timer");
+  }
 });
+
